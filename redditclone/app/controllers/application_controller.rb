@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
             current_user.reset_session_token!
             session[:session_token] = nil
             @current_user = nil
+        end
     end
 
     def logged_in?
@@ -22,12 +23,14 @@ class ApplicationController < ActionController::Base
 
     def required_logged_in
         if !logged_in?
-            redirect_to 
+            redirect_to
+        end
     end
 
     def require_logged_out
         if logged_in?
             redirect_to
+        end
     end
 
 end

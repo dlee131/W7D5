@@ -1,0 +1,4 @@
+class SubsController < ApplicationController
+
+    
+end
